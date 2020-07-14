@@ -1,5 +1,12 @@
 # react-challenge
 
+### Submitting
+Branch off `trunk` locally, make your edits, then send us a zip
+
+`git archive -o challenge.zip HEAD`
+
+
+### Prompt
 Logged-in hiring managers see a tabbed table called "My Pipeline" that lists job applicants
 in their various stages. Implement this table as shown in the following screenshots using
 the following REST API as a data source:
@@ -15,7 +22,7 @@ https://my-json-server.typicode.com/workstep/react-challenge-data/candidates/[id
 
 <img src="docs/img/modal.png" width="580">
 
-### Running
 
+### Running
 Run `npm run serve` to start the dev server that will build your files with hot module
 replacement. If you need to change the port, you can find it in `webpack.config.js`.
