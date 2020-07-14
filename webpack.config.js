@@ -1,11 +1,10 @@
 const autoprefixer = require('autoprefixer');
 const path = require('path');
-const webpack = require('webpack');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const ROOT_DIR  = path.resolve(__dirname);
 const JS_DIR = path.resolve(ROOT_DIR, 'src');
-const OUTPUT_DIR = path.resolve(ROOT_DIR, 'dist');
+const PUBLIC_DIR = path.resolve(ROOT_DIR, 'public');
+const OUTPUT_DIR = path.resolve(PUBLIC_DIR, 'dist');
 
 
 module.exports = {
@@ -15,6 +14,10 @@ module.exports = {
     target: 'web',
     stats: {
         children: false, // Stop CSS extraction from being so noisy
+    },
+    devServer: {
+        contentBase: PUBLIC_DIR,
+        port: 3535,
     },
     entry: {
         app: path.resolve(JS_DIR, 'app.jsx'),
@@ -44,7 +47,7 @@ module.exports = {
             {
                 test: /\.(less|css)$/,
                 use: [
-                    MiniCssExtractPlugin.loader,
+                    'style-loader',
                     {
                         loader: 'css-loader',
                         options: { importLoaders: 2 },
@@ -67,11 +70,6 @@ module.exports = {
             }
         ],
     },
-    plugins: [
-        new MiniCssExtractPlugin({
-            filename: '[name].css',
-        }),
-    ],
     optimization: {
         minimize: false,
         noEmitOnErrors: false,

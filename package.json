@@ -2,7 +2,7 @@
   "name": "wsinterview",
   "version": "1.0.0",
   "scripts": {
-    "watch": "NODE_ENV=development NODE_PATH=./src:$NODE_PATH webpack --progress --watch"
+    "serve": "webpack-dev-server --open --hot"
   },
   "author": "WorkStep",
   "private": true,
@@ -34,12 +34,13 @@
     "css-loader": "^3.2.0",
     "less": "2.7.2",
     "less-loader": "5.0.0",
-    "mini-css-extract-plugin": "^0.8.0",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "postcss-loader": "3.0.0",
     "redux-devtools-extension": "^2.13.8",
+    "style-loader": "^1.2.1",
     "webpack": "^4.40.2",
-    "webpack-cli": "^3.3.8"
+    "webpack-cli": "^3.3.8",
+    "webpack-dev-server": "^3.11.0"
   },
   "babel": {
     "presets": [

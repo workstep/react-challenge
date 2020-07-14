@@ -11,6 +11,7 @@ function init(el, initialState) {
 
     ReactDOM.render((
         <Provider store={store}>
+            <header className="header">Pipeline</header>
             <div>Hello world</div>
         </Provider>
     ), el);
