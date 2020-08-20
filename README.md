@@ -20,8 +20,6 @@ https://my-json-server.typicode.com/workstep/react-challenge-data/candidates/[id
 
 <img src="docs/img/table.png" width="580">
 
-<img src="docs/img/modal.png" width="580">
-
 
 ### Running
 Run `npm run serve` to start the dev server that will build your files with hot module
