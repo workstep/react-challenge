@@ -18,7 +18,7 @@ the demo API will not actually persist the changes:
 
 https://my-json-server.typicode.com/workstep/react-challenge-data/candidates/[id]
 
-<img src="docs/img/table.png" width="580">
+<img src="docs/img/table2.png" width="580">
 
 
 ### Running
