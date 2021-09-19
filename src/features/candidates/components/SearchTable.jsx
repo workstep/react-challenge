@@ -5,57 +5,57 @@ import { CandidateTableHeader } from "./CandidateTableHeader.jsx";
 import { CandidateTableRow } from "./CandidateTableRow.jsx"; 
 
 async function getCandidates() {
-  return fetch("https://my-json-server.typicode.com/workstep/react-challenge-data/candidates")
-  .then((result) => result.json());  
+    return fetch("https://my-json-server.typicode.com/workstep/react-challenge-data/candidates")
+    .then((result) => result.json());  
 };  
 
-const getFilteredCandidates = (list, filter) => {
-    if (filter == "All") {
-        return list; 
-    } 
-    return list.filter((candidate) => candidate.step == filter);  
-}; 
+    const getFilteredCandidates = (list, filter) => {
+        if (filter == "All") {
+            return list; 
+        } 
+        return list.filter((candidate) => candidate.step == filter);  
+    }; 
 
-const filterByText = (list, text) => { 
-    if (text == "") {
-       return list; 
-    }
-    let search = text.toLowerCase(); 
-    return list.filter((candidate) => { 
+    const filterByText = (list, text) => { 
+        if (text == "") {
+            return list; 
+        }
+        let search = text.toLowerCase(); 
+            return list.filter((candidate) => { 
         let name = candidate.name.toLowerCase();
-        return name.indexOf(search) !== -1 
-    });   
-};  
- 
-export function SearchTable(props) {
+            return name.indexOf(search) !== -1 
+        });   
+    };  
 
-  const dispatch = useDispatch();
+    export function SearchTable(props) {
 
-  let [tick, setTick ] = useState(0); 
+    const dispatch = useDispatch();
 
-  let [searchText, setSearchText ] = useState("");  
+    let [tick, setTick ] = useState(0); 
 
-  const candidates = useSelector((state) => state.candidates);     
+    let [searchText, setSearchText ] = useState("");  
 
-  let list = getFilteredCandidates(candidates.list, props.filter); 
+    const candidates = useSelector((state) => state.candidates);     
 
-  list = filterByText(list, searchText); 
+    let list = getFilteredCandidates(candidates.list, props.filter); 
 
-  const updateSearchText = (searchText) => {
-      setSearchText(searchText); 
-  } 
+    list = filterByText(list, searchText); 
 
-  const updateStatus = (step, id) => { 
-    dispatch({type: 'candidates/updateStep',step: step, id: id }); 
-    setTick(++tick);  
-  }; 
+    const updateSearchText = (searchText) => {
+        setSearchText(searchText); 
+    } 
 
-  useEffect(() => { 
-     getCandidates().then((candidates) => { 
-        dispatch({type: 'candidates/setCandidates', candidates});   
+    const updateStatus = (step, id) => { 
+        dispatch({type: 'candidates/updateStep',step: step, id: id }); 
         setTick(++tick);  
-     });
-  }, [dispatch]); 
+    }; 
+
+    useEffect(() => { 
+        getCandidates().then((candidates) => { 
+            dispatch({type: 'candidates/setCandidates', candidates});   
+            setTick(++tick);  
+        });
+    }, [dispatch]); 
 
 	return  <div className="searchTable">
 				<SearchBox updateSearchText={updateSearchText} />

@@ -18,15 +18,15 @@ export function CandidateTableRow(props) {
 	};
 
 	return  <div className="candidate-table-row">
-	          <div className="candidate-name">{props.info.name}</div>
-	          <div className="candidate-date">{displayTime(props.info.time_interview)}</div> 
-	          <div className="candidate-status">
-	            <select value={props.info.step} onChange={(e, props) => handleChange(e, props)}>
-	            	<option value="">Select Step</option>
-					<option value="Drug Test">Drug Test</option>
-	              	<option value="Background Check">Background Check</option>
-              		<option value="Paperwork">Paperwork</option>
-	            </select>
-	          </div> 
-	        </div>;
+				<div className="candidate-name">{props.info.name}</div>
+				<div className="candidate-date">{displayTime(props.info.time_interview)}</div> 
+				<div className="candidate-status">
+					<select value={props.info.step} onChange={(e, props) => handleChange(e, props)}>
+						<option value="">Select Step</option>
+						<option value="Drug Test">Drug Test</option>
+						<option value="Background Check">Background Check</option>
+						<option value="Paperwork">Paperwork</option>
+					</select>
+				</div> 
+			</div>;
 }

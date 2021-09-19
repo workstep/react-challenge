@@ -7,13 +7,13 @@ export function SearchBox(props) {
 	};
 	
 	return  <div className="search-box">
-	          <i className="material-icons search-icon">search</i>
-	          <input
-	            onChange={updateSearchText}
-	            className="form-control"
-	            type="text"
-	            placeholder="Start typing to filter by name"
-	            aria-label="Search"
-	          />
-	        </div>
+				<i className="material-icons search-icon">search</i>
+				<input
+				onChange={updateSearchText}
+				className="form-control"
+				type="text"
+				placeholder="Start typing to filter by name"
+				aria-label="Search"
+				/>
+			</div>;
 }

@@ -10,7 +10,7 @@ export const Container =  () => {
 	let [ tick, setTick ] = useState(0);
 
 	const steps = useSelector((state) => state.steps);  
- 
+
 	const dispatch = useDispatch();
 
 	const updateCategory = (filter) => {  
@@ -20,12 +20,12 @@ export const Container =  () => {
 
 	return 	<div>
 				<div className="header">Pipeline</div>
-				<div className="app-container">	 
+					<div className="app-container">	 
 					<div className="category-filter">
 						{steps.list.map((filter, i) => <CategoryFilter key={i} name={filter} selectedFilter={steps.filter} updateCategory={updateCategory} />)} 
 					</div>  
 					<SearchTable filter={steps.filter} />
 				</div>
 			</div>;
-};
+	};
 	 
