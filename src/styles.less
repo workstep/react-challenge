@@ -10,16 +10,110 @@
 @red-orange:            #fc6635;
 @teal:                  #00cba5;
 
-// Styles
+/* Styles */
 body {
     font: 15px 'Ropa Sans', sans-serif;
     line-height: 18px;
 }
 
 .header {
-    margin: 15px 0;
-
+    margin: 15px 0; 
     font-size: 36px;
     line-height: 46px;
     color: @navy;
 }
+
+
+.material-icons.search-icon {
+    position: absolute;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+
+.search-box {
+    padding-bottom: 15px;
+}
+
+.search-box > input {
+    padding: 3px 0 5px 25px;
+    width: 450px;
+    opacity: 0.5;
+    outline: 0;
+    border-width: 0 0 2px;
+    border-color: none;
+    &:hover {
+        border-color: @teal;
+    } 
+}
+ 
+.category-filter {
+    padding: 90px 0px;
+    width: 175px;
+    div {
+        padding: 5px;
+        text-transform: uppercase;
+        font-weight: bold;
+        line-height: 20px;
+        font-size: 10px;
+        cursor: pointer;
+        &:hover {
+            border-left: 1px solid @teal;
+        } 
+    } 
+}
+
+.active {
+    border-left: 1px solid @teal;
+}
+
+
+.category-filter > div:hover {
+    border-left: 1px solid @teal;
+}
+
+.app-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.search-table {
+    margin: 0px;
+    padding: 25px;
+}
+
+.candidate-table-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.candidate-table-row > div {
+    padding: 10px 0 10px; 
+    border-bottom: 1px solid #bbb;
+}
+
+.candidate-row-header {
+    color: #aaa;
+}
+
+.candidate-name {
+    width: 150px;
+}
+
+.candidate-date {
+    width: 150px;
+}
+
+.candidate-status {
+    width: 175px;
+    select {
+        border-radius: 5px;
+        border-color: #bbb;
+        text-transform: uppercase; 
+        &:hover {
+            border-color: @teal;
+        }
+    }
+}
+
+ 
+ 
